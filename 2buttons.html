@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background</title>
+    <style>
+        body {
+            transition: background-color 0.5s, background-image 0.5s;
+            background-size: contain; /* Adjust size to fit within the background */
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            height: 100vh; /* Ensure the body covers the full viewport height */
+        }
+        button {
+            display: block;
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <button id="colorButton">Change Background Color</button>
+    <button id="imageButton">Change Background Image</button>
+
+    <script>
+        const colors = ['#FF5733', '#33FF57', '#3357FF', '#F3FF33', '#FF33F6'];
+        let currentColorIndex = 0;
+
+        document.getElementById('colorButton').addEventListener('click', () => {
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+            document.body.style.backgroundColor = colors[currentColorIndex];
+        });
+
+        const images = [
+            'url("https://i1.sndcdn.com/artworks-iH9bfLs6x7laeSwD-cgDnOg-t500x500.jpg")',
+            'url("https://qph.cf2.quoracdn.net/main-qimg-19b90d0fe81db0fbb818b65fadcc2f09-lq")',
+            'url("https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/03/screenshot_2023-03-02_at_11-20-45_am_1400x700.jpg")',
+            'url("https://geekgals.co/wp-content/uploads/2022/03/06745-classic-geek-gal-athena-goodfon.jpg?w=1200")',
+            'url("https://www.themarysue.com/wp-content/uploads/2021/03/hades-resized.jpg?w=1200")'
+        ];
+        let currentImageIndex = 0;
+
+        document.getElementById('imageButton').addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            document.body.style.backgroundImage = images[currentImageIndex];
+        });
+    </script>
+</body>
+</html>
