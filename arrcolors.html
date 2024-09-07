@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Color to Array</title>
+</head>
+<body>
+    <h2>Color Array Management</h2>
+    <p>Current Colors: <span id="colorsList"></span></p>
+    <input type="text" id="colorInput" placeholder="Enter a color">
+    <button id="addColorButton">Add Color</button>
+
+    <script>
+        
+        let colors = ["Red", "Green", "Blue"];
+
+        
+        function displayColors() {
+            document.getElementById("colorsList").textContent = colors.join(", ");
+        }
+
+       
+        displayColors();
+
+        document.getElementById("addColorButton").addEventListener("click", () => {
+            let newColor = document.getElementById("colorInput").value.trim();
+
+            
+            if (newColor && !colors.includes(newColor)) {
+                colors.push(newColor);
+                displayColors();
+                alert(newColor + " has been added to the array.");
+            } else if (newColor === "") {
+                alert("Please enter a color.");
+            } else {
+                alert(newColor + " is already in the array.");
+            }
+
+            
+            document.getElementById("colorInput").value = "";
+        });
+    </script>
+</body>
+</html>

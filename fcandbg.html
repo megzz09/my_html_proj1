@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Heading Colors</title>
+</head>
+<body>
+    <h1 id="heading">Sample Heading</h1>
+    
+    <label for="fontColor">Select Font Color:</label>
+    <select id="fontColor">
+        <option value="black">Black</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+    </select>
+    
+    <label for="bgColor">Select Background Color:</label>
+    <select id="bgColor">
+        <option value="white">White</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+    </select>
+    
+    <button id="applyColorsButton">Apply Colors</button>
+    
+    <script>
+        document.getElementById('applyColorsButton').addEventListener('click', () => {
+            const fontColor = document.getElementById('fontColor').value;
+            const bgColor = document.getElementById('bgColor').value;
+            const heading = document.getElementById('heading');
+            
+            
+            if (fontColor === bgColor) {
+                alert("Font color and background color cannot be the same.");
+            } else {
+                
+                heading.style.color = fontColor;
+                heading.style.backgroundColor = bgColor;
+            }
+        });
+    </script>
+</body>
+</html>

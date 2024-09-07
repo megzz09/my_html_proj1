@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Character Occurrences</title>
+</head>
+<body>
+    <h2>Character Occurrence Counter</h2>
+
+    <p>Array: ['f', 'f', 'a', 'f', 'z', 'j']</p>
+    
+    <label for="characterInput">Enter a character to count its occurrences:</label>
+    <input type="text" id="characterInput" maxlength="1">
+    
+    <button id="countButton">Count Occurrences</button>
+    
+    <p id="result"></p>
+    
+    <script>
+        
+        const arr = ['f', 'f', 'a', 'f', 'z', 'j'];
+
+        
+        function countOccurrences(character) {
+            let count = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === character) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        document.getElementById('countButton').addEventListener('click', () => {
+            const character = document.getElementById('characterInput').value;
+            
+            if (character && character.length === 1) {
+                const occurrences = countOccurrences(character);
+                document.getElementById('result').textContent = `Occurrences of '${character}' is: ${occurrences}`;
+            } else {
+                document.getElementById('result').textContent = "Please enter a valid single character.";
+            }
+        });
+    </script>
+</body>
+</html>
