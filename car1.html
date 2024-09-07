@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fff; /* Keeps the entire page background white */
+        }
+
+        .container {
+            background-color: #f9f9f9;
+            background-image: url('https://wallpapers.com/images/hd/blue-car-3840-x-2160-m8mriyp6u1wjv4hv.jpg'); /* Add your background image */
+            background-size: cover; /* Ensures the image covers the entire container */
+            background-position: center; /* Centers the background image */
+            padding: 20px;
+            max-width: 800px;
+            margin: 50px auto;
+            border: 2px solid #333;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .service-heading {
+            color: white; /* Changed color to white */
+            font-size: 33px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .service-description1{
+            text-align: center;
+            color: white;
+        }
+
+        .service-description {
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-align: left; 
+
+        }
+
+        .packages {
+            margin: 20px 0;
+        }
+
+        .packages-heading {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: white; /* Changed color to white */
+            text-align: left;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 100%;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .service-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; 
+            gap: 20px;
+            margin: 20px auto;
+        }
+
+        .service-container {
+            text-align: center;
+            border: 1px solid #140441;
+            padding: 10px;
+            width: 200px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        .service-container:hover {
+            transform: scale(1.05);
+        }
+
+        .service-label {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .service-price {
+            color: #01014b;
+            margin: 5px 0;
+        }
+
+        .contact-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .contact-button:hover {
+            background-color: #0056b3;
+        }
+
+        .accessories-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            text-align: center;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .accessory-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .accessory-image {
+            width: 100px; /* Small image size */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .accessory-label {
+            margin-top: 8px; /* Space between image and label */
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="service-heading">Car Service Center</h1>
+        <p class="service-description1">Select from our exclusive range of <strong>Services</strong> and <strong>Packages</strong> to give your car a stunning new look.</p>
+
+        <p class="packages-heading"><span style="background-color: rgb(3, 3, 46); padding: 0 5px;">Our Service Pakckages:</span></p>
+        <div class="service-wrapper">
+            <div class="service-container">
+                <div class="service-label">Basic Service</div>
+                <div class="service-description">
+                    <ul>
+                        <li>Oil and filter change</li>
+                        <li>Fluid checks and top-ups</li>
+                        <li>Tire pressure adjustment</li>
+                        <li>Visual inspection of major components</li>
+                    </ul>
+                </div>
+                <div class="service-price">₹4000</div>
+                <button class="contact-button">Book Now</button>
+            </div>
+        
+            <div class="service-container">
+                <div class="service-label">Standard Service Package</div>
+                <div class="service-description">
+                    <ul>
+                        <li>Includes Basic Package</li>
+                        <li>Air and cabin filter replacement</li>
+                        <li>Tire rotation</li>
+                        <li>Brake inspection</li>
+                    </ul>
+                </div>
+                <div class="service-price">₹6000</div>
+                <button class="contact-button">Book Now</button>
+            </div>
+        
+            <div class="service-container">
+                <div class="service-label">Full Service Package</div>
+                <div class="service-description">
+                    <ul>
+                        <li>Includes Standard Package</li>
+                        <li>Transmission fluid change</li>
+                        <li>Coolant replacement</li>
+                        <li>Alignment check</li>
+                        <li>Tyre Analyse</li>
+                    </ul>
+                </div>
+                <div class="service-price">₹9000</div>
+                <button class="contact-button">Book Now</button>
+            </div>
+        
+            <div class="service-container">
+                <div class="service-label">Premium Service Package</div>
+                <div class="service-description">
+                    <ul>
+                        <li>Includes Full Service Package</li>
+                        <li>Detailed cleaning</li>
+                        <li>Advanced diagnostics</li>
+                        <li>Additional manufacturer-recommended services</li>
+                    </ul>
+                </div>
+                <div class="service-price">₹11000</div>
+                <button class="contact-button">Book Now</button>
+            </div>
+
+            <div class="service-container">
+                <div class="service-label">Special Service Package</div>
+                <div class="service-description">
+                    <ul>
+                        <li>Performance tuning, or pre-purchase inspections</li>
+                        <li>Winterizing</li>
+                        <li>Detailed Cleaning</li>
+                        <li>Customized services based on vehicle needs</li>
+                    </ul>
+                </div>
+                <div class="service-price">₹7000</div>
+                <button class="contact-button">Book Now</button>
+            </div>
+        </div> 
+        
+        <div class="packages">
+            <p class="packages-heading"><span style="background-color: rgb(3, 3, 46); padding: 0 5px;">Car Accessories Provided:</span></p>
+
+            <div class="accessories-container">
+                <div class="accessory-item">
+                    <img src="https://m.media-amazon.com/images/I/71Lzg0+D0TL._AC_UF1000,1000_QL80_.jpg" alt="Floor Mats" class="accessory-image">
+                    <div class="accessory-label">Floor Mats</div>
+                </div>
+                <div class="accessory-item">
+                    <img src="https://rideofrenzy.com/46388-large_default/rideofrenzy-luxury-nappa-leather-car-seat-covers-skin-fit-tailor-made-grifh-black-and-red-20mm-evlon-foam.jpg" alt="Seat Covers" class="accessory-image">
+                    <div class="accessory-label">Seat Covers</div>
+                </div>
+                <div class="accessory-item">
+                    <img src="https://t4.ftcdn.net/jpg/00/76/24/63/360_F_76246372_81gPC15MggYTpaC9wXWRu1HDcUcxpYNo.jpg" alt="Phone Mount" class="accessory-image">
+                    <div class="accessory-label">Phone Mount</div>
+                </div>
+                <div class="accessory-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEs5Tk-wrZ08SABw_UChQm-FndplV08Hiyxw&s" alt="Car Cover" class="accessory-image">
+                    <div class="accessory-label">Car Cover</div>
+                </div>
+                <div class="accessory-item">
+                    <img src="https://legaldesire.com/wp-content/uploads/2024/06/male-auto-wrapper-with-blade-car-tinting-film.jpg" alt="Window Tinting" class="accessory-image">
+                    <div class="accessory-label">Window Tinting</div>
+                </div>
+                <div class="accessory-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG1ia9VX_8M0QXSRxUUqd2v57pQ3m5J1x3TA&s" alt="Roof Rack" class="accessory-image">
+                    <div class="accessory-label">Roof Rack</div>
+                </div>
+                <div class="accessory-item">
+                    <img src="https://www.jiomart.com/images/product/original/rvydnorqme/procus-hector-car-dashcam-car-camera-with-recording-car-front-camera-dashboard-camera-motion-detector-product-images-orvydnorqme-p604737428-0-202309221414.jpg?im=Resize=(1000,1000)" alt="Dash Cams" class="accessory-image">
+                    <div class="accessory-label">Dash Cams</div>
+                </div>
+                <div class="accessory-item">
+                    <img src="https://m.media-amazon.com/images/I/61VxjgLRd-L.jpg" alt="Bluetooth Adapter" class="accessory-image">
+                    <div class="accessory-label">Bluetooth Adapter</div>
+                </div>
+            </div>
+        </div>              
+    </div>
+</body>
+</html>
