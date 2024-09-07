@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Registration Form</title>
+    <style type="text/css">
+        label{
+            width: 70px;
+            display: inline-block;
+            white-space: nowrap;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            max-width: 800px;
+            width: 100%;
+            background-color: #e9a3a3;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            height: 30px;
+            padding: 0.5rem;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        .row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 1rem;
+        }
+
+        .row .input-field {
+            flex: 1;
+        }
+
+        .input-half {
+            flex: 1;
+            margin-right: 15px;
+        }
+
+        .input-last {
+            flex: 1;
+        }
+
+        .gender-group {
+            margin-bottom: 1rem;
+        }
+
+        .gender-group fieldset {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+
+        .gender-group legend {
+            font-weight: bold;
+            padding: 0 5px;
+            color: #333;
+        }
+
+        .gender-group label {
+            margin-right: 10px;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 0.5rem 1.5rem;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .flex-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .flex-row .form-group {
+            flex: 1;
+        }
+
+        .input-last {
+            margin-right: 0;
+        }
+
+        .input-half {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div class="form-container">
+            <h1>Company Registration Form</h1>
+            <p class="form-description">Please fill out the following details to register your company with us. All fields marked with an asterisk (*) are mandatory.</p><br>
+
+            <div class="flex-row">
+                <div class="form-group">
+                    <label for="cname">
+                        Company Name<span style="color:red;">*</span>
+                    </label>
+                    <input type="text" id="cname" name="cname">
+                </div>
+                <div class="form-group">
+                    <label for="oname">
+                        Owner<span style="color:red;">*</span>
+                    </label>
+                    <input type="text" id="oname" name="oname" style="width: 390px;">
+                </div>
+            </div>
+            
+            <div class="gender-group">
+                <label for="gender">Gender</label>
+                <fieldset>
+                    <label>
+                        <input type="checkbox" name="gender" value="male"> Male
+                    </label>
+                    <label>
+                        <input type="checkbox" name="gender" value="female"> Female
+                    </label>
+                    <label>
+                        <input type="checkbox" name="gender" value="prefer_not_to_say"> Prefer Not to Say
+                    </label>
+                </fieldset>
+            </div>
+            
+            <div class="form-group">
+                <label for="cmname">
+                    Company Mailing Address<span style="color:red;">*</span>
+                </label>
+                <input type="text" id="cmname" name="cmname" placeholder="Street Address" style="height: 50px; width: 800px;">
+            </div>
+            
+            <div class="row">
+                <div class="input-field input-half">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" placeholder="City" style="height: 20px;  width: 280px;">
+                </div>
+                <div class="input-field input-last">
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state" placeholder="State" style="height: 20px;  width: 280px;">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="input-field input-half">
+                    <label for="pcode">Pin Code</label>
+                    <input type="text" id="pcode" name="pcode" placeholder="Pin Code" style="height: 20px;  width: 280px;">
+                </div>
+                <div class="input-field input-last">
+                    <label for="country">Country</label>
+                    <select id="country" name="country" style="height: 30px;  width: 288px;">
+                        <option value="" disabled selected>Select Country</option>
+                        <option value="argentina">Argentina</option>
+                        <option value="australia">Australia</option>
+                        <option value="brazil">Brazil</option>
+                        <option value="canada">Canada</option>
+                        <option value="china">China</option>
+                        <option value="france">France</option>
+                        <option value="germany">Germany</option>
+                        <option value="india">India</option>
+                        <option value="italy">Italy</option>
+                        <option value="japan">Japan</option>
+                        <option value="mexico">Mexico</option>
+                        <option value="netherlands">Netherlands</option>
+                        <option value="nigeria">Nigeria</option>
+                        <option value="south_africa">South Africa</option>
+                        <option value="south_korea">South Korea</option>
+                        <option value="spain">Spain</option>
+                        <option value="saudi_arabia">Saudi Arabia</option>
+                        <option value="sweden">Sweden</option>
+                        <option value="turkey">Turkey</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="usa">United States</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field input-half">
+                    <label for="email">Email<span style="color: red;">*</span></label><br>
+                    <input type="text" id="email" name="email" style="height: 20px;  width: 355px;">
+                </div>
+                <div class="input-field input-last">
+                    <label for="pno">Phone<span style="color: red;">*</span></label>
+                    <input type="text" id="pno" name="pno" style="height: 20px;  width: 280px;" pattern="[0-9]{10}" placeholder="1234567890">
+                </div>
+            </div>
+
+            <div class="flex-row">
+                <div class="form-group">
+                    <label for="nominal_capital">Nominal Capital</label>
+                    <input type="text" id="nominal_capital" name="nominal_capital">
+                </div>
+                <div class="form-group">
+                    <label for="industry">Industry</label>
+                    <select id="industry" name="industry">
+                        <option value="" disabled selected>Select Industry</option>
+                        <option value="technology">Technology</option>
+                        <option value="finance">Finance</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="education">Education</option>
+                        <option value="manufacturing">Manufacturing</option>
+                        <option value="retail">Retail</option>
+                        <option value="transportation">Transportation</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="real_estate">Real Estate</option>
+                        <option value="energy">Energy</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="website">Website</label>
+                    <input type="text" id="website" name="website" style="width: 340px;">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description">Company Description</label>
+                <input type="text" id="description" name="description" style="height: 90px; width: 100%;">
+            </div>
+
+            <input type="submit" value="Register Company" class="submit-btn">
+        </div>
+    </form>
+</body>
+</html>
+
