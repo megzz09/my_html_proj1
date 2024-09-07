@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append Anchor Tag</title>
+    <style>
+        
+        button {
+            padding: 15px 40px;
+            font-size: 20px;
+            background-color: #778d78;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #29782d;
+        }
+
+        
+        #linkContainer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        
+        a {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            width: 200px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #29782d;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="addLinkButton">Click</button>
+    <div id="linkContainer"></div>
+
+    <script>
+        const addLinkButton = document.getElementById('addLinkButton');
+        const linkContainer = document.getElementById('linkContainer');
+
+        addLinkButton.addEventListener('click', function() {
+            const newLink = document.createElement('a');
+            newLink.href = 'https://www.geeksforgeeks.org/courses/data-science-live?source=google&medium=cpc&device=c&keyword=gfg&matchtype=e&campaignid=20039445781&adgroup=147845288105&gad_source=1&gclid=Cj0KCQjwiuC2BhDSARIsALOVfBI93eE20lLYzRfz5faW1d8yNg-JJF2_mUVpZ84fwc17pVdnnv3KLiAaAgwzEALw_wcB';  
+            newLink.textContent = 'Go to GfG.com';  
+            newLink.target = '_blank';  
+
+            linkContainer.appendChild(newLink);
+        });
+    </script>
+
+</body>
+</html>

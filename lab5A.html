@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append Row to Table</title>
+    <style>
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            color: rgb(188, 34, 93); 
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Field 1</th> 
+                <th>Field 2</th>
+                <th>Field 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button id="addRowButton">Add Row</button>
+
+    <script>
+        
+        const addRowButton = document.getElementById('addRowButton');
+        const table = document.getElementById('myTable').getElementsByTagName('tbody')[0];
+
+        
+        addRowButton.addEventListener('click', function() {
+            
+            const newRow = table.insertRow();
+
+            
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            const cell3 = newRow.insertCell(2);
+
+            cell1.textContent = 'New Data';
+            cell2.textContent = 'New Data';
+            cell3.textContent = 'New Data';
+        });
+    </script>
+
+</body>
+</html>

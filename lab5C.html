@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Color Change Events</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #colorButton {
+            width: 150px;
+            height: 150px;
+            font-size: 18px;
+            background-color: lightblue;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="colorButton">
+        Move Around,<br>CLICK,<br>or Keep Away
+    </button>
+
+    <script>
+        
+        var button = document.getElementById("colorButton");
+
+        
+        button.onmouseover = function() {
+            button.style.backgroundColor = "lightgreen";
+        };
+
+        
+        button.onmouseout = function() {
+            button.style.backgroundColor = "lightblue";
+        };
+
+        
+        button.onclick = function() {
+            button.style.backgroundColor = "lightcoral";
+        };
+    </script>
+
+</body>
+</html>
