@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Application</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #f0f0f0, #ffffff);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 400px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .input-section {
+            margin-bottom: 20px;
+        }
+        .input-section input {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: calc(100% - 22px);
+            box-sizing: border-box;
+        }
+        .input-section button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .input-section button:hover {
+            background-color: #0056b3;
+        }
+        .cart-section h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .cart-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .cart-section li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ddd;
+        }
+        .cart-section li div {
+            display: flex;
+            gap: 5px;
+        }
+        .cart-section button {
+            padding: 5px 10px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .cart-section button.update {
+            background-color: #ffc107;
+        }
+        .cart-section button.update:hover {
+            background-color: #e0a800;
+        }
+        .cart-section button.delete:hover {
+            background-color: #bd2130;
+        }
+        .message {
+            color: red;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        .discount-section {
+            margin-top: 20px;
+        }
+        .discount-section input {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: calc(100% - 22px);
+            box-sizing: border-box;
+        }
+        .discount-section button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .discount-section button:hover {
+            background-color: #218838;
+        }
+        .total {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book Shopping Cart</h1>
+        <div class="input-section">
+            <input type="text" id="bookName" placeholder="Enter book name" />
+            <input type="number" id="bookQuantity" placeholder="Enter quantity" min="1" />
+            <button onclick="addBook()">Add Book</button>
+            <div class="message" id="message"></div>
+        </div>
+        <div class="cart-section">
+            <h2>Shopping Cart</h2>
+            <ul id="cartList"></ul>
+        </div>
+        <div class="discount-section">
+            <input type="text" id="discountCode" placeholder="Enter discount code" />
+            <button onclick="applyDiscount()">Apply Discount</button>
+            <div class="message" id="discountMessage"></div>
+        </div>
+        <div class="total" id="totalQuantity">Total Quantity: 0</div>
+    </div>
+
+    <script>
+        const cart = [];
+        const validDiscountCode = "BOOK10";  // Example discount code
+
+        function displayCart() {
+            const cartList = document.getElementById("cartList");
+            cartList.innerHTML = "";
+            let totalQuantity = 0;
+
+            cart.forEach((book, index) => {
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `
+                    ${book.name} (Quantity: ${book.quantity})
+                    <div>
+                        <button class="update" onclick="updateBook(${index})">Update</button>
+                        <button class="delete" onclick="deleteBook(${index})">Delete</button>
+                    </div>
+                `;
+                cartList.appendChild(listItem);
+                totalQuantity += parseInt(book.quantity);
+            });
+
+            document.getElementById("totalQuantity").textContent = `Total Quantity: ${totalQuantity}`;
+        }
+
+        function addBook() {
+            const bookName = document.getElementById("bookName").value.trim();
+            const bookQuantity = document.getElementById("bookQuantity").value;
+            const messageElement = document.getElementById("message");
+
+            if (bookName === "" || bookQuantity === "") {
+                messageElement.textContent = "Please enter both book name and quantity.";
+                return;
+            }
+
+            const existingBookIndex = cart.findIndex(book => book.name.toLowerCase() === bookName.toLowerCase());
+
+            if (existingBookIndex >= 0) {
+                cart[existingBookIndex].quantity = parseInt(cart[existingBookIndex].quantity) + parseInt(bookQuantity);
+            } else {
+                const book = {
+                    name: bookName,
+                    quantity: parseInt(bookQuantity)
+                };
+                cart.push(book);
+            }
+
+            messageElement.textContent = "";  // Clear message
+            displayCart();
+            document.getElementById("bookName").value = "";  // Clear input
+            document.getElementById("bookQuantity").value = "";  // Clear input
+        }
+
+        function updateBook(index) {
+            const newQuantity = prompt("Enter new quantity:", cart[index].quantity);
+            if (newQuantity !== null && newQuantity !== "") {
+                const quantityNumber = parseInt(newQuantity);
+                if (!isNaN(quantityNumber) && quantityNumber > 0) {
+                    cart[index].quantity = quantityNumber;
+                    displayCart();
+                } else {
+                    alert("Please enter a valid quantity.");
+                }
+            }
+        }
+
+        function deleteBook(index) {
+            if (confirm("Are you sure you want to delete this book?")) {
+                cart.splice(index, 1);
+                displayCart();
+            }
+        }
+
+        function applyDiscount() {
+            const discountCode = document.getElementById("discountCode").value.trim();
+            const discountMessageElement = document.getElementById("discountMessage");
+
+            if (discountCode === validDiscountCode) {
+                cart.forEach(book => {
+                    book.quantity = Math.ceil(book.quantity * 0.9);  // Apply 10% discount
+                });
+                discountMessageElement.textContent = "Discount applied successfully!";
+                discountMessageElement.style.color = "green";
+            } else {
+                discountMessageElement.textContent = "Invalid discount code!";
+                discountMessageElement.style.color = "red";
+            }
+
+            displayCart();
+        }
+    </script>
+</body>
+</html>
