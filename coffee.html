@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("https://cdn.pixabay.com/photo/2022/03/03/15/40/coffee-7045578_640.png"); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: #C4A484; 
+            padding: 20px;
+            max-width: 600px; 
+            margin: 50px auto; 
+            border: 2px solid #6E260E; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+            border-radius: 8px; 
+            text-align: center; 
+        }
+
+        .cafe-heading {
+            color: rgb(40, 31, 8);
+            font-family: "Tangerine", Times, serif;
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .p1 {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 15px;
+            }
+
+        .menu {
+            margin: 20px 0;
+        }
+
+        .menu-heading {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: rgb(71, 48, 20);
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 100%;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #6E260E;
+        }
+
+        th.price-col, td.price-col {
+            width: 120px; 
+        }
+
+        .products-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; 
+            gap: 20px;
+            margin: 20px auto;
+        }
+
+        .product-container {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 150px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        .product-container:hover {
+            transform: scale(1.05);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 120px; 
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-label {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .product-price {
+            color: green;
+            margin: 5px 0;
+        }
+
+        .add-button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .add-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="cafe-heading">Café & Latté</h1>
+        <p class="p1">Welcome to Café & Latté, where we serve handcrafted coffee with rich, bold flavors. Explore our online menu and bring the café experience home with our expertly brewed beverages.</p>
+
+        <div class="menu">
+            <p class="menu-heading">Menu</p>
+            <table>
+                <tr>
+                    <th>Coffee Type</th>
+                    <th>Description</th>
+                    <th class="price-col">Price</th>
+                </tr>
+                <tr>
+                    <td>Espresso</td>
+                    <td>A strong, concentrated coffee made by forcing hot water through fine grounds</td>
+                    <td class="price-col">₹ 100</td>
+                </tr>
+                <tr>
+                    <td>Latte</td>
+                    <td>Espresso with steamed milk, topped with light froth</td>
+                    <td class="price-col">₹ 200</td>
+                </tr>
+                <tr>
+                    <td>Cappuccino</td>
+                    <td>Equal parts espresso, steamed milk, and frothy foam, often with cocoa</td>
+                    <td class="price-col">₹ 250</td>
+                </tr>
+                <tr>
+                    <td>Cortado</td>
+                    <td>Equal parts espresso and steamed milk, smooth and creamy</td>
+                    <td class="price-col">₹ 250</td>
+                </tr>
+                <tr>
+                    <td>Americano</td>
+                    <td>Espresso diluted with hot water for a milder flavor</td>
+                    <td class="price-col">₹ 150</td>
+                </tr>
+                <tr>
+                    <td>Iced Coffee</td>
+                    <td>Brewed coffee over ice, often sweetened with milk or cream</td>
+                    <td class="price-col">₹ 300</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="products-wrapper">
+            <div class="product-container">
+                <img src="https://www.cafe938.ch/wp-content/uploads/2023/12/espresso-expresso-cafe938-scaled.jpg" alt="Product Image" class="product-image">
+                <div class="product-label">Espresso</div>
+                <div class="product-price">₹ 100</div>
+                <button class="add-button">+</button>
+            </div>
+    
+            <div class="product-container">
+                <img src="https://coffeeaffection.com/wp-content/uploads/2020/01/how-to-make-a-latte-at-home.jpg" alt="Product Image 2" class="product-image">
+                <div class="product-label">Latte</div>
+                <div class="product-price">₹ 200</div>
+                <button class="add-button">+</button>
+            </div>
+    
+            <div class="product-container">
+                <img src="https://assets.wsimgs.com/wsimgs/rk/images/dp/recipe/202412/0001/img77l.jpg" alt="Product Image 3" class="product-image">
+                <div class="product-label">Cappuccino</div>
+                <div class="product-price">₹ 250</div>
+                <button class="add-button">+</button>
+            </div>
+    
+            <div class="product-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmKRAVzBC-84YtQFFo73q_s1BFR58uOdlryg&s" alt="Product Image 4" class="product-image">
+                <div class="product-label">Cortado</div>
+                <div class="product-price">₹ 250</div>
+                <button class="add-button">+</button>
+            </div>
+    
+            <div class="product-container">
+                <img src="https://lifeboostcoffee.com/cdn/shop/articles/feature-images_66bc3628-f3c5-4dee-925c-0414f317d337.jpg?v=1674205946" alt="Product Image 5" class="product-image">
+                <div class="product-label">Americano</div>
+                <div class="product-price">₹ 150</div>
+                <button class="add-button">+</button>
+            </div>
+    
+            <div class="product-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3nCYev6b0PW9DleVNnXhPfJq0DbhLtWrNJQ&s" alt="Product Image 6" class="product-image">
+                <div class="product-label">Iced Coffee</div>
+                <div class="product-price">₹ 300</div>
+                <button class="add-button">+</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
